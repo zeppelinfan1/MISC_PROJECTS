@@ -5,7 +5,7 @@ using namespace std;
 
 
 
-float neuron(vector<float> inputs, vector<float> weights) {
+float neuron(vector<float> inputs, vector<float> weights, float bias) {
 
     // Find min of vectors so that cannot loop outside of bounds
     int max_range =  min(inputs.size(), weights.size());
@@ -15,7 +15,7 @@ float neuron(vector<float> inputs, vector<float> weights) {
         sum += inputs[i] * weights[i];
     }
 
-    return sum;
+    return sum + bias;
 }
 
 
@@ -24,9 +24,10 @@ int main () {
     // Main input
     vector<float> inputs = {1.0, 2.0, 1.0, 2.5, 1.5, 1.0, 2.0}; // Adding 1 extra for practice
     vector<float> weights = {0.4, 1.1, 0.3, 0.1, 0.9, 0.4};
+    float bias = 2.3;
 
     // Main function call to sum the product of input and weights
-    float sum = neuron(inputs, weights);
+    float sum = neuron(inputs, weights, bias);
 
     cout << "Output: " << sum << endl;
 
