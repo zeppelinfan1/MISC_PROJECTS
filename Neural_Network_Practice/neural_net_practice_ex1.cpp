@@ -1,4 +1,4 @@
-// BASICS ie. SINGLE NEURON
+// BASICS ie. SINGLE NEURON USING ITERATIVE LOOPING TO PRODUCE OUTPUT
 #include <iostream>
 #include <vector>
 #include <cstdlib>
