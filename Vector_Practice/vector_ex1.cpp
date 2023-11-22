@@ -22,7 +22,11 @@ void better_print(const vector<int>& my_vector) { /* Note that num is not an ite
 
     cout << "Content of vector is: {";
     for (const int& num : my_vector) { // How to enumerate here so that last number doesn't get the comma after it?
-        if (num==my_vector.size()) {cout << num;} else {cout << num << ",";}
+        if (num==my_vector.size()) {
+            cout << num;
+        } else {
+            cout << num << ",";
+        }
     }
     cout << "}" << endl;
 }
