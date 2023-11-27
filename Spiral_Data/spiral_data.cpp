@@ -1,7 +1,7 @@
 /* EXAMPLE DATA FOR NEURAL NETWORK - TAKEN FROM SPIRAL DATA PYTHON MODULE */
 #include <iostream>
 #include <vector>
-#include <math.h>
+#include <cmath>
 using namespace std;
 
 
@@ -10,11 +10,14 @@ public:
     int samples;
     int classes;
 
+private:
     double range_random_double(int min, int max) {
 
+        // Returns random double value between min and max integers
         return  (double(max - min) * double(rand()) / static_cast<double> (RAND_MAX)) + double(min);
     }
 
+public:
     vector<double> generate_x_data () {
 
         // Generate vector of zeroes for X and Y
@@ -36,12 +39,10 @@ public:
             }
         }
 
-        double value;
         vector<double> x_value;
         // Create vector for y values i.e. linear space of based on class with random constant added
         for (int l=0; l<x_range.size(); l++) {
-            value = (4. / (samples - 1) * l) + (range_random_double(-1, 1) * 0.2);
-            x_value.push_back(value);
+            x_value.push_back((4. / (samples - 1) * l) + (range_random_double(-1, 1) * 0.2));
         }
 
         // Loop through x_vector, y and apply calculated values
